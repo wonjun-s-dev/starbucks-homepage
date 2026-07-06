@@ -7,5 +7,6 @@
     <orderEntry type="library" name="swiper" level="application" />
     <orderEntry type="library" name="gsap" level="application" />
     <orderEntry type="library" name="lodash.js" level="application" />
+    <orderEntry type="library" name="ScrollMagic" level="application" />
   </component>
 </module>
