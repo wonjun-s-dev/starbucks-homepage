@@ -1,36 +1,37 @@
 # Starbucks Homepage
 
-[한 줄 소개 — 무엇을, 누구를 위해, 왜 만들었는지]
+스타벅스 코리아 공식 홈페이지의 UI와 인터랙션을 그대로 재현한 정적 프론트엔드 클론 프로젝트입니다.
 
-배포: [배포_URL] · 데모: [데모_링크] · 문서: [docs_링크]
+배포: [배포_URL](https://euphonious-manatee-8cb890.netlify.app/)
 
-**Stack**: React, TypeScript, NestJS, Prisma, Docker, AWS
+**Stack**: HTML5, CSS3, Vanilla JavaScript, GSAP, Swiper, ScrollMagic
 
-**기간 / 인원**: 2026.XX – 2026.XX · 1인 개발
+**기간 / 인원**: 2026.07.02 ~ 2026.07.06 · 1인 개발
 
 ---
 
 ## 프로젝트 소개
 
-[문제 상황]을 해결하기 위해 만든 [서비스/도구/사이드 프로젝트]입니다.
+프론트엔드 퍼블리싱 실력과 스크롤/애니메이션 라이브러리 활용 능력을 기르기 위해 진행한 클론 프로젝트입니다. (패스트캠퍼스 강의 실습)
 
-- [핵심 기능 1]
-- [핵심 기능 2]
-- [핵심 기능 3]
+- 메인 페이지의 12개 이상 섹션(비주얼, 공지, 리워드, 유튜브, 시즌 상품, 리저브 커피, Find the store, Awards 등) 마크업/스타일 재현
+- GSAP 기반 스크롤 인터랙션(헤더 뱃지 페이드, Top 버튼, 플로팅 오브젝트, 스크롤 스파이)
+- Swiper를 활용한 3종 캐러셀(공지사항 세로 슬라이드, 프로모션, 어워드)
+- 로그인 페이지 UI 별도 구현
 
 **왜 만들었는가**
-[동기 — 실무에서 겪은 불편함, 학습 목적, 개인적 필요 등 1~3문장]
+실제 서비스 화면을 그대로 뜯어보며 레이아웃 구현, CSS 애니메이션, 서드파티 라이브러리(GSAP/Swiper/ScrollMagic) 연동 경험을 쌓기 위해 제작했습니다.
 
-**성과 / 결과** (있으면 반드시 채우기)
-[예: 실사용자 100명, API 응답속도 40% 개선, 수작업 30분→3분 자동화]
+**성과 / 결과**
+학습 목적의 클론 프로젝트로, 실사용자 지표는 없습니다.
 
 ---
 
 ## 스크린샷
 
-| 화면 1 | 화면 2 |
-|---|---|
-| ![screenshot1](이미지_경로) | ![screenshot2](이미지_경로) |
+| 화면 1                                   | 화면 2                                   |
+|----------------------------------------|----------------------------------------|
+| ![screenshot1](./screenshot/sc-01.png) | ![screenshot2](./screenshot/sc-02.png) |
 
 ---
 
@@ -38,157 +39,92 @@
 
 | 구분 | 기술 | 선택 이유 |
 |---|---|---|
-| Frontend | React, TypeScript, Next.js | [예: SSR로 초기 로딩 개선] |
-| Backend | NestJS, GraphQL, Prisma | [예: 타입 안정성 확보] |
-| Database | PostgreSQL | [예: 관계형 데이터에 적합] |
-| Infra | Docker, GitHub Actions, AWS ECS | [예: 무중단 배포] |
+| Markup / Style | HTML5, CSS3 | 프레임워크 없이 순수 마크업/스타일링 연습 |
+| Animation | GSAP 3.5.1, ScrollToPlugin | 스크롤 트리거 애니메이션과 부드러운 스크롤 이동 구현 |
+| Carousel | Swiper 6.8.4 | 공지/프로모션/어워드 등 다양한 슬라이드 옵션(방향, autoplay, pagination)을 한 라이브러리로 통일 |
+| Scroll Effect | ScrollMagic 2.0.8 | `scroll-spy` 클래스 토글로 섹션 진입 시 애니메이션 트리거 |
+| Utility | Lodash | 스크롤 이벤트 `throttle` 처리로 성능 저하 방지 |
+| 기타 | YouTube IFrame API, Google Fonts(Nanum Gothic), Material Icons | 영상 임베드 및 디자인 요소 재현 |
+| Tooling | Prettier | 코드 포맷 통일 (`.prettierrc`) |
 
-이번 프로젝트에서 **처음 써본 기술**: [예: GraphQL, Prisma]
-→ 왜 도입했는지, 기존 방식과 뭐가 다른지 한두 줄로 적어두면 학습 기록과 어필이 동시에 됨
-
----
-
-## 아키텍처
-
-```mermaid
-graph LR
-  A[Client - Next.js] --> B[API - NestJS/GraphQL]
-  B --> C[(Database - Prisma)]
-  B --> D[External API]
-```
-
-설계 포인트: [왜 이 구조를 선택했는지 1~2문장]
-
----
-
-## 주요 기능
-
-**1. [기능명]**
-[짧은 설명 + 스크린샷/GIF]
-
-**2. [기능명]**
-[짧은 설명 + 스크린샷/GIF]
-
----
-
-## 기술적 의사결정 & 트러블슈팅
-
-면접에서 실제로 질문받을 내용이라 생각하고 작성. "문제 → 원인 → 해결 → 결과" 순.
-
-**[문제 1 제목: 예) MSW가 오디오 Range Request를 가로채서 시킹이 안 됨]**
-- 문제: [상황 설명]
-- 원인: [분석 과정]
-- 해결: [적용한 해결책]
-- 결과: [before/after, 개선 수치]
-
-**[문제 2 제목: 예) Docker ARM64 vs X86_64 아키텍처 불일치]**
-- 문제: [상황 설명]
-- 원인: [분석 과정]
-- 해결: [적용한 해결책]
-- 결과: [배포 성공 여부, 소요 시간]
-
----
-
-## 학습 로그
-
-> 프로젝트를 진행하며 새로 공부하거나 깊게 파본 개념들. 나중에 "이거 어디서 배웠더라" 할 때, 그리고 면접에서 "왜 이걸 썼냐"는 질문에 바로 대답할 수 있게 남겨둠.
-
-| 날짜 | 배운 개념 | 왜 필요했는가 | 참고 자료 |
-|---|---|---|---|
-| 2026-XX-XX | [예: Prisma relation query] | [예: N+1 문제 해결하려고] | [블로그/공식문서 링크] |
-| 2026-XX-XX | [예: Docker multi-stage build] | [예: 이미지 용량 줄이려고] | [링크] |
-| 2026-XX-XX | | | |
+이번 프로젝트에서 **처음 써본 기술**: ScrollMagic, GSAP ScrollToPlugin
+→ CSS만으로는 어려운 "스크롤 위치에 따른 클래스 토글"과 "특정 좌표로 부드럽게 스크롤"을 라이브러리로 해결하는 경험을 쌓았습니다.
 
 ---
 
 ## 프로젝트 구조
 
 ```
-project-root/
-├── apps/
-│   ├── web/            # Next.js 프론트엔드
-│   └── server/          # NestJS 백엔드
-├── packages/shared/       # 공통 타입/유틸
-├── prisma/schema.prisma
-└── docker-compose.yml
+starbucks-homepage/
+├── index.html          # 메인 페이지
+├── signin/
+│   └── index.html       # 로그인 페이지
+├── css/
+│   ├── common.css       # 헤더/푸터 등 공통 스타일
+│   ├── main.css        # 메인 페이지 섹션별 스타일
+│   └── signin.css       # 로그인 페이지 스타일
+├── js/
+│   ├── common.js       # 검색창 인터랙션, 연도 표시
+│   ├── main.js         # GSAP/Swiper/ScrollMagic 인터랙션
+│   └── youtube.js       # YouTube IFrame API 초기화
+├── images/             # 슬라이드, 배경, 아이콘 등 에셋
+└── favicon.ico / favicon.png
 ```
+
+---
+
+## 주요 기능
+
+**1. 헤더 인터랙션**
+검색창 focus 시 확장 애니메이션, 스크롤 500px 이상 시 상단 뱃지 페이드아웃 및 Top 버튼 노출.
+
+**2. 메인 비주얼**
+GSAP를 이용한 텍스트/이미지 순차 페이드인 효과.
+
+**3. 캐러셀 3종**
+공지사항(세로 자동 슬라이드), 프로모션(가운데 정렬 + 토글 숨김 버튼), Awards(5개 노출 + 좌우 네비게이션) — 모두 Swiper로 구현.
+
+**4. 스크롤 스파이 애니메이션**
+`section.scroll-spy` 요소가 뷰포트에 80% 진입하면 ScrollMagic이 `show` 클래스를 토글해 섹션 등장 애니메이션을 트리거.
+
+**5. 플로팅 오브젝트**
+`floating1~3` 요소를 GSAP로 랜덤한 딜레이/폭으로 상하 반복 이동시켜 자연스러운 부유 효과 연출.
+
+**6. YouTube 임베드**
+YouTube IFrame API를 동적으로 로드해 자동재생 + 무음 + 반복재생 플레이어 삽입.
+
+**7. 로그인 페이지**
+메인 페이지와 분리된 `/signin` 경로에 별도 UI 구현.
 
 ---
 
 ## 실행 방법
 
-요구 사항: Node.js 18+, pnpm 8+, Docker(선택)
+빌드 도구 없이 정적 파일로 구성되어 있어 별도 설치 과정이 필요 없습니다.
 
 ```bash
 git clone [저장소_URL]
-cd [프로젝트명]
-pnpm install
-cp .env.example .env
-pnpm prisma migrate dev
-pnpm dev
+cd starbucks-homepage
+
+# 방법 1: 브라우저로 바로 열기
+open index.html
+
+# 방법 2: 로컬 서버로 실행 (권장 — CORS/상대경로 이슈 방지)
+npx live-server
 ```
-
----
-
-## 배포
-
-호스팅: AWS ECS Fargate
-CI/CD: GitHub Actions → Docker 빌드 → ECR 푸시 → ECS 배포
-
-```
-git push → GitHub Actions (test → build) → ECR → ECS Fargate 배포
-```
-
-<details>
-<summary>배포 파이프라인 상세</summary>
-
-```yaml
-# .github/workflows/deploy.yml 핵심 부분
-[워크플로우 요약 또는 링크]
-```
-
-</details>
-
----
-
-## 셋업 로그
-
-<details>
-<summary>진행 중 사용한 주요 명령어 히스토리</summary>
-
-```bash
-# 2026-XX-XX  초기 생성
-npx create-next-app@13.5.6 [프로젝트명] --use-pnpm --ts --tailwind --eslint
-
-# 2026-XX-XX  DB 설정
-pnpm add prisma @prisma/client
-pnpm dlx prisma init
-pnpm prisma migrate dev --name init
-
-# 2026-XX-XX  배포 이슈 해결 (ARM64 → X86_64)
-docker buildx build --platform linux/amd64 -t [이미지명] .
-```
-
-</details>
 
 ---
 
 ## 회고
 
-- 배운 점: [기술적으로 얻은 것]
-- 아쉬운 점: [시간 부족으로 못한 것, 있는 그대로]
-- 다음 계획: [구체적인 다음 스텝]
-
-부족한 점을 솔직하게 적는 게 오히려 성장 가능성으로 읽힙니다. 잘한 척보다 정직하게.
+- 배운 점: GSAP·Swiper·ScrollMagic 세 라이브러리를 한 페이지에서 같이 써보면서 각각의 역할을 명확히 구분하는 법을 익혔습니다. 특히 스크롤 이벤트에 애니메이션을 직접 걸면 성능이 급격히 떨어진다는 걸 체감하고 나서, `lodash.throttle`로 스크롤 핸들러 실행 빈도를 제한하는 습관을 들이게 됐습니다.
+- 아쉬운 점: 화면 크기를 데스크톱 기준으로만 만들어서 모바일/태블릿 대응이 전혀 안 되어 있습니다. 로그인 페이지도 UI만 있고 실제 인증 로직은 없어서, 지금은 "마크업+인터랙션 재현"에 그친 상태입니다.
+- 다음 계획: 반응형 브레이크포인트 추가 → 이미지 lazy loading 적용 → 로그인 폼에 최소한의 유효성 검사 붙이기 순으로 진행할 예정입니다.
 
 ---
 
 ## 향후 개선 계획
 
-- [ ] 테스트 코드 작성 (Jest, Vitest)
-- [ ] 성능 모니터링 도입 (Sentry, Datadog)
-- [ ] CI 파이프라인에 E2E 테스트 추가
-
----
-
-[이름] · [이메일] · [GitHub] · [블로그/포트폴리오]
+- [ ] 반응형 레이아웃 대응 (모바일/태블릿)
+- [ ] 로그인 페이지 실제 인증 로직 연동
+- [ ] 이미지 lazy loading 적용
